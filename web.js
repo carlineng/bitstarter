@@ -10,7 +10,9 @@ app.get('/', function(request, response) {
   response.send(index_buffer.toString('utf-8'))
 });
 
-var port = process.env.PORT || 5000;
+app.use(express.static(__dirname + '/public'));
+
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
